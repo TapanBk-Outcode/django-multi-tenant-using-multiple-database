@@ -1,6 +1,6 @@
 # Multi Tenant Architecture using multiple database with Django
 
-## Installation
+## Cloning and Initial setup
 
 ### Clone the repo.
 
@@ -10,7 +10,7 @@
 virtualenv venv
 ```
 
-#### For different Python version
+#### For different Python version [In this Example, python3.9]
 ```shell
 virtualenv venv -p python3.9
 ```
@@ -33,12 +33,15 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
+For Other Python version [In this Example, python3.9]
+
 ```shell
-pip3 install -r requirements.txt
+pip3.9 install -r requirements.txt
 ```
 
 
-## Database configuration
+## Database configurations
+
 ```python
 DATABASES = {
     'default': {
@@ -55,8 +58,10 @@ DATABASES = {
     },
 }
 ```
+This configuration is the example database configuration for sqlite3.
+You can update the database configuration for other database engines as well. 
 
-## Hosts configuration
+## Hosts configurations
 
 ### Update the hostnames in the hosts in */etc/hosts*
 ```shell
@@ -65,12 +70,12 @@ DATABASES = {
 127.0.0.1 outcode-peru.office.local
 ```
 
-### Update on ALLOWED_HOSTS in *settings.py* file
+### Update on *ALLOWED_HOSTS* in *settings.py* file
 ```python
 ALLOWED_HOSTS = ['office.local', '.office.local']
 ```
 
-## Migrations
+## Creating migrations, database schema and create super admin
 
 ### Run the command to make migrations
 ```shell
@@ -83,7 +88,7 @@ python manage.py makemigrations Office
 python manage.py migrate 
 ```
 
-### Run the command to migrate for create superuser for default database
+#### Run the command to migrate for create superuser for default database
 ```shell
 python office_manage.py createsuperuser
 ```
@@ -100,7 +105,7 @@ python manage.py migrate --database=outcodeNepal
 User *--database* option to use the respective Tenant
 For Tenant **outcodeNepal** use *--database=outcodeNepal*
 
-#### Run the command to migrate for create superuser
+#### Run the command to migrate for create superuser for Tenant
 ```shell
 python office_manage.py createsuperuser --database=outcodeNepal
 ```
@@ -122,7 +127,7 @@ python manage.py runserver outcode-nepal.office.local:8018
 You can use different port after:
 
 
-## Accessing Tenant:
+## Accessing Tenant's site and superadmin portal:
 
 ### For Default site
 
