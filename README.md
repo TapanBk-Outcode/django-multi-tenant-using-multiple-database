@@ -39,27 +39,18 @@ For Other Python version [In this Example, python3.9]
 pip3.9 install -r requirements.txt
 ```
 
+## Create and update environment file
+### Copy the .env.example file as .env and update the details
 
-## Database configurations
+## Database configurations in .env file
 
 ```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'outcodeNepal': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.outcodeNepal',
-    },
-    'outcodePeru': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.outcodePeru',
-    },
-}
+DATABASES={"default":{"ENGINE":"django.db.backends.sqlite3","NAME":"db.sqlite3"},"outcodeNepal":{"ENGINE":"django.db.backends.sqlite3","NAME":"db.outcodeNepal"},"outcodePeru":{"ENGINE":"django.db.backends.sqlite3","NAME":"db.outcodePeru"}}
 ```
 This configuration is the example database configuration for sqlite3.
-You can update the database configuration for other database engines as well. 
+You can update the database configuration for other database engines as well.
+
+<p>Since, we will be using the multiple database, we will be using the dict format in .env file for all the databases</p>
 
 ## Hosts configurations
 

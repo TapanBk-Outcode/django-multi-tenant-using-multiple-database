@@ -82,6 +82,7 @@ WSGI_APPLICATION = 'multitenant.wsgi.application'
 
 
 DATABASES = env.json('DATABASES')
+TENANTS_AND_DATABASE_MAPPING = env.json('TENANTS_AND_DATABASE_MAPPING')
 
 DATABASE_ROUTERS = ['Office.router.OfficeRouter']
 # Password validation
